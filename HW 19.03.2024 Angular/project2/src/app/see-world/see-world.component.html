@@ -1,0 +1,22 @@
+<section>
+  <h1>Go See the World</h1>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="item" *ngFor="let article of articles">
+        <img [src]="article.src" alt="{{article.title}}">
+        <h2>{{article.title}}</h2>
+        <p>{{article.text}}</p>
+      </div> -->
+
+      <div class="item" *ngFor="let article of articles; let i = index">
+        <ng-container *ngIf="i < 3"> <!-- Проверка, для первых трех элементов -->
+          <img [src]="article.src" alt="{{ article.title }}">
+          <h2>{{ article.title }}</h2>
+          <p>{{ article.text }}</p>
+        </ng-container>
+      </div>
+
+    </div>
+  </div>
+</section>

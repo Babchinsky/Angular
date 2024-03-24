@@ -40,3 +40,33 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+
+# Папка node_modules содержит зависимости npm, которые не должны быть включены в репозиторий
+node_modules/
+
+# Папка dist содержит скомпилированные файлы Angular, которые обычно не нужно отслеживать
+dist/
+
+# Файлы конфигурации Angular CLI, такие как angular.json и .angular-cli.json
+angular.json
+.angular-cli.json
+
+# Файлы настроек для разработчика, такие как .editorconfig, .prettierrc, .eslintrc и другие
+.editorconfig
+.prettierrc
+.eslintrc
+
+# Файлы настроек для тестирования, такие как karma.conf.js и protractor.conf.js
+karma.conf.js
+protractor.conf.js
+
+# Файлы настроек для IDE, такие как .vscode/, .idea/ и .project
+.vscode/
+.idea/
+.project
+
+# Любые временные файлы или кэши
+*.log
+*.cache
+*.tmp

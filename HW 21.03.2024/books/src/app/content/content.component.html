@@ -1,0 +1,19 @@
+<main>
+  <section class="books">
+    <div class="item" *ngFor="let book of books" (click)="showDetails(book)">
+      <h2>{{book.title}}</h2>
+      <h3>{{book.author}}</h3>
+    </div>
+  </section>
+
+  <section class="details">
+    <div *ngIf="selectedBook">
+      <h3>{{selectedBook.title}}</h3>
+      <p>Author: {{selectedBook.author}}</p>
+      <p>Year: {{selectedBook.year}}</p>
+      <p>Price: ${{selectedBook.price}}</p>
+      <p>Rating: {{selectedBook.rating}}</p>
+      <img [src]="selectedBook.src">
+    </div>
+  </section>
+</main>

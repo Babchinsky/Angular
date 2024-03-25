@@ -1,0 +1,46 @@
+<section>
+  <div class="item">
+    <img [src]="iphones[currentPhoneIndex].src" alt="Dynamic Image">
+    <p>6.7" iPhone 15 Plus and 6.1" iPhone 15 in {{ iphones[currentPhoneIndex].color }}</p>
+  </div>
+
+  <div class="color-picker">
+  <label class="colors">
+    <input type="radio" name="color" value="colors" (click)="changePhone(0)">
+    <div class="layer"></div>
+    <div class="button"><span></span></div>
+  </label>
+  
+  <label class="amber">
+    <input type="radio" name="color" value="amber" (click)="changePhone(1)">
+    <div class="layer"></div>
+    <div class="button"><span></span></div>
+  </label>
+  
+  <label class="lime">
+    <input type="radio" name="color" value="lime" (click)="changePhone(2)">
+    <div class="layer"></div>
+    <div class="button"><span></span></div>
+  </label>
+  
+  <label class="teal">
+    <input type="radio" name="color" value="teal" (click)="changePhone(3)">
+    <div class="layer"></div>
+    <div class="button"><span></span></div>
+  </label>
+  
+  <label class="blue">
+    <input type="radio" name="color" value="blue" (click)="changePhone(4)">
+    <div class="layer"></div>
+    <div class="button"><span></span></div>
+  </label>
+  
+  <label class="indigo">
+    <input type="radio" name="color" value="indigo" (click)="changePhone(5)">
+    <div class="layer"></div>
+    <div class="button"><span></span></div>
+  </label>
+
+
+  </div>
+</section>

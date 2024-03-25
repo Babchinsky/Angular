@@ -1,0 +1,102 @@
+.container {
+  text-align: center;
+}
+
+input {
+  display: none;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.button span {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  background: #eeeeee;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: ease 0.3s;
+}
+
+.button span:hover {
+  padding: 10px;
+}
+
+.colors .button span{
+  background: conic-gradient(from 0deg, #d5dde0, #ebd0d2, #ece6c6, #cfd9c9, #d5dde0);
+}
+
+.amber .button span {
+  background: #ebd0d2;
+}
+
+.lime .button span {
+  background: #ece6c6;
+}
+
+.teal .button span {
+  background: #cfd9c9;
+}
+
+.blue .button span {
+  background: #d5dde0;
+}
+
+.indigo .button span {
+  background: #3c4042;
+}
+
+.layer {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  /*transition: ease .3s;*/
+  z-index: -1;
+}
+
+section {
+  align-items: center;
+  height: 100vh; /* Делаем секцию по высоте всего экрана */
+}
+
+.container {
+  width: 80%; /* Ширина контейнера */
+  padding: 20px; /* Отступы вокруг контейнера */
+  background-color: #f0f0f0; /* Цвет фона контейнера */
+  border-radius: 10px; /* Закругляем углы контейнера */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Тень контейнера */
+}
+
+.item {
+  text-align: center;
+}
+
+.color-picker {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.label {
+  margin: 0 10px; /* Расстояние между каждым цветовым выбором */
+}
+

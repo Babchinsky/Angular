@@ -1,0 +1,19 @@
+<div class="parent-wrapper">
+  <div class="stock-wrapper">
+    <div *ngFor="let product of productsInStock" class="product">
+      <app-child [productInput]="product" (addOneToCartChild)="addOneToCartParent(product)"
+        (removeOneFromCartChild)="removeOneFromCartParent(product)">
+      </app-child>
+    </div>
+  </div>
+
+  <div class="cart-wrapper">
+    <h1>Корзина: ${{getTotalPrice()}}</h1>
+    <div *ngFor="let productInCart of productsInCart" class="cart-item">
+      <span>{{productInCart.name}}</span>
+      <span>${{productInCart.price}}</span>
+      <span>{{productInCart.quantity}}</span>
+      <span>= {{productInCart.price * productInCart.quantity}}</span>
+    </div>
+  </div>
+</div>

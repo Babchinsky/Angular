@@ -1,0 +1,9 @@
+<div class="product">
+  <h2>{{productInput.name}}
+    <span>${{productInput.price}}</span>
+  </h2>
+  <p>На складе: {{productInput.quantity}}</p>
+
+  <button (click)="addOneToCart(productInput)">+</button>
+  <button (click)="removeOneFromCart(productInput)">-</button>
+</div>

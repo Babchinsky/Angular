@@ -1,0 +1,39 @@
+/* Стили для формы добавления нового пользователя */
+.add-user-form {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 200px;
+}
+
+.submit-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Стили для элементов списка пользователей */
+.user-item {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.remove-button,
+.edit-button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.edit-button {
+  background-color: #ffc107;
+}

@@ -1,0 +1,17 @@
+<!-- Форма для добавления нового пользователя -->
+<form (submit)="addUser()" class="add-user-form">
+  <label for="html_input">Введите нового пользователя:</label><br>
+  <input type="text" name="newUserName" [(ngModel)]="newUser.name" class="form-input">
+  <input type="number" name="newUserSalary" [(ngModel)]="newUser.salary" class="form-input">
+  <input type="date" name="newUserBirthday" [(ngModel)]="newUser.birthday" class="form-input">
+  <input type="submit" value="Добавить" class="submit-button">
+</form>
+
+<!-- Список пользователей -->
+<div *ngFor="let user of users" class="user-item">
+  <h2>{{user.name| titlecase}}</h2>
+  <h3>{{user.salary | currency:'USD':'symbol':'1.2-2'}}</h3>
+  <p>{{ user.birthday | date: 'd LLLL yyyy' }}</p>
+  <button (click)="removeUser(user)" class="remove-button">Удалить</button>
+  <button (click)="editUser(user)" class="edit-button">Редактировать</button>
+</div>

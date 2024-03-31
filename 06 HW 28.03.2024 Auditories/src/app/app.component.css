@@ -1,0 +1,48 @@
+.sort-wrap {
+  margin-bottom: 20px;
+}
+
+.sort-button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sort-button:hover {
+  background-color: #45a049;
+}
+
+.filter-select {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.audience-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.audience-item {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px;
+  width: calc(33.33% - 10px);
+  box-sizing: border-box; 
+}
+
+.audience-item h1 {
+  margin-top: 0;
+}
+
+.audience-item h2 {
+  margin-bottom: 5px;
+}
+
+.audience-item p {
+  margin: 0;
+}

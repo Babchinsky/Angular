@@ -1,0 +1,29 @@
+<div class="sort-wrap">
+  <button class="sort-button" (click)="sortBy = 'name'">Сортировать по имени</button>
+  <button class="sort-button" (click)="sortBy = 'capacity'">Сортировать по вместимости</button>
+
+  <select class="filter-select" [(ngModel)]="selectedFaculty">
+    <option value="all">все факультеты</option>
+    <option *ngFor="let faculty of faculties" [value]="faculty">{{ faculty }}</option>
+  </select>
+
+  <select class="filter-select" [(ngModel)]="selectedGroup">
+    <option value="all">все группы</option>
+    <option *ngFor="let group of groups" [value]="group.name">
+      {{ group.name }} ({{ group.studentCount }})
+    </option>
+  </select>
+
+</div>
+
+<div class="audience-list" *ngFor="let audience of audiences 
+  | sortBy: sortBy 
+  | filterBy: searchInput: 'faculty' 
+  | filterBy: selectedFaculty === 'all' ? '' : selectedFaculty: 'faculty' 
+  | filterByGroup: groups: selectedGroup">
+  <div class="audience-item">
+    <h1>{{ audience.name }}</h1>
+    <h2>Вместимость: {{ audience.capacity }}</h2>
+    <p>Факультет: {{ audience.faculty }}</p>
+  </div>
+</div>

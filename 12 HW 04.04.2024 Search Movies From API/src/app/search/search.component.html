@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Search</h1>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" [(ngModel)]="searchTitle" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="type">Type:</label>
+      <select name="type" id="type" [(ngModel)]="searchType" #selectTypeForNotFounded class="form-control">
+        <option value="movie">Movie</option>
+        <option value="series">Series</option>
+        <option value="episode">Episode</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  <div *ngIf="movies.length === 0  && formTouched" class="alert alert-info">
+    {{searchType | titlecase}} not found.
+  </div>
+
+<div class="film-container">
+  <div *ngFor="let movie of movies" class="film-data">
+    <h2 (click)="showDetails(movie.imdbID)">{{ movie.Title }} ({{ movie.Year }})</h2>
+    <img src="{{ movie.Poster }}" alt="Movie Poster">
+  </div>
+</div>
+
+</div>

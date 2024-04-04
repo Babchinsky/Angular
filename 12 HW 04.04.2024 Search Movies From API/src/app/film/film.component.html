@@ -1,0 +1,26 @@
+@if (filmData) {
+<div class="container">
+  <button class="btn" (click)="backToSearch()">Back to Search</button>
+  <div class="film-description">
+    <img src="{{ filmData.Poster }}" alt="Movie Poster">
+
+    <div class="film-text">
+      <h2>{{ filmData.Title }}</h2>
+      <p><strong>Year:</strong> {{ filmData.Year }}</p>
+      <p><strong>Rated:</strong> {{ filmData.Rated }}</p>
+      <p><strong>Released:</strong> {{ filmData.Released }}</p>
+      <p><strong>Runtime:</strong> {{ filmData.Runtime }}</p>
+      <p><strong>Genre:</strong> {{ filmData.Genre }}</p>
+      <p><strong>Director:</strong> {{ filmData.Director }}</p>
+      <p><strong>Writer:</strong> {{ filmData.Writer }}</p>
+      <p><strong>Actors:</strong> {{ filmData.Actors }}</p>
+      <p><strong>Plot:</strong> {{ filmData.Plot }}</p>
+      <p><strong>Language:</strong> {{ filmData.Language }}</p>
+      <p><strong>Country:</strong> {{ filmData.Country }}</p>
+      <p><strong>Awards:</strong> {{ filmData.Awards }}</p>
+      <p><strong>IMDB Rating:</strong> {{ filmData.imdbRating }}</p>
+      <p><strong>IMDB Votes:</strong> {{ filmData.imdbVotes }}</p>
+    </div>
+  </div>
+</div>
+}

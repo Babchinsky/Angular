@@ -1,0 +1,57 @@
+<div class="container">
+  <h2>Sign Up Form</h2>
+
+  <!-- строка #signupForm="ngForm" создает переменную signupForm, которая будет представлять объект формы Angular. Вы можете
+  использовать эту переменную в вашем шаблоне для доступа к объекту формы и его свойствам, таким как валидность формы,
+  значения полей и т. д. -->
+  <form #signupForm="ngForm" (submit)="onSubmit(signupForm)">
+
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" ngModel required pattern="^[a-zA-Z0-9_]{3,20}$">
+
+    @if(signupForm.controls['username'].hasError('required') &&
+        signupForm.controls['username'].touched) 
+    {
+      <p class="error-message">Please enter your username.</p>
+    } 
+    @else if (signupForm.controls['username'].hasError('pattern') && signupForm.controls['username'].touched){
+      <p class="error-message">
+        Username must contain only letters, numbers, and underscores and be between 3 and 20 characters long.
+      </p>
+    }
+
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" ngModel  required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,12}$">
+
+    @if (signupForm.controls['password'].hasError('required') &&
+         signupForm.controls['password'].touched) {
+      <p class="error-message">Please enter your password.</p>
+    } 
+    @else if (signupForm.controls['password'].hasError('pattern') && 
+              signupForm.controls['password'].touched) 
+              {
+                  <p class="error-message">Password must contain at least one lowercase letter, one uppercase letter, one digit, and be
+                    between 6 and 12 characters long.</p>
+
+              }
+
+
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" name="confirm-password" id="confirm-password" ngModel  required>
+  
+
+    @if (signupForm.controls['password'].value !== signupForm.controls['confirm-password'].value &&
+        signupForm.controls['confirm-password'].touched) {
+      <p class="error-message">Your passwords does not match.</p>
+    }
+
+
+   <button 
+    type="submit" 
+    [disabled]="!signupForm.valid || signupForm.controls['password'].value !== signupForm.controls['confirm-password'].value">
+    Sign Up
+  </button> 
+
+  </form>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Sign Up Form</h2>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+    <label for="username">Username:</label>
+    <input type="text" formControlName="username">
+    <div *ngIf="signupForm?.get('username')?.invalid && signupForm?.get('username')?.touched">
+      <p class="error-message" *ngIf="signupForm?.get('username')?.errors?.['required']">Please enter your username.</p>
+      <p class="error-message" *ngIf="signupForm?.get('username')?.errors?.['pattern']">
+        Username must contain only letters, numbers, and underscores and be between 3 and 20 characters long.
+      </p>
+
+    </div>
+
+    <label for="password">Password:</label>
+    <input type="password" formControlName="password">
+    <div *ngIf="signupForm?.get('password')?.invalid && signupForm?.get('password')?.touched">
+      <p class="error-message" *ngIf="signupForm?.get('password')?.errors?.['required']">Please enter your password.</p>
+      <p class="error-message" *ngIf="signupForm?.get('password')?.errors?.['pattern']">
+        Password must contain at least one lowercase letter, one uppercase letter, one digit, and be between 6 and 12
+        characters long.
+      </p>
+
+    </div>
+
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" formControlName="confirmPassword">
+    <div
+      *ngIf="signupForm?.get('confirmPassword')?.value !== signupForm?.get('password')?.value && signupForm?.get('confirmPassword')?.touched">
+      <p class="error-message">Your passwords do not match.</p>
+    </div>
+
+    <button type="submit" [disabled]="signupForm.invalid || signupForm.get('confirmPassword')?.value !== signupForm.get('password')?.value">Sign Up</button>
+  </form>
+</div>

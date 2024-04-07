@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "name": "Edited",
+      "description": "new description",
+      "price": "999.99",
+      "discount": "10",
+      "id": "4"
+    },
+    {
+      "id": "5",
+      "name": "Tablet",
+      "description": "A versatile tablet for work and entertainment.",
+      "price": 399.99,
+      "discount": 0.15
+    },
+    {
+      "id": "c7a2",
+      "name": "Alex",
+      "description": "Who",
+      "price": "1000",
+      "discount": "12"
+    }
+  ]
+}

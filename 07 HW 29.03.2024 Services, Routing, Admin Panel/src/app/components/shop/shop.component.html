@@ -1,0 +1,9 @@
+<app-header></app-header>
+<div *ngFor="let product of products; let i = index;" class="container">
+  <div class="product-info">
+    <div>{{product.name}}</div>
+    <div>{{product.description}}</div>
+    <div>${{product.price}}</div>
+    <div>{{product.discount}}%</div>
+  </div>
+</div>
